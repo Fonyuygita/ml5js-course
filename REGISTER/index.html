@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/ml5@latest/dist/ml5.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bg-image"></div>
+        <div class="form-container">
+            <h2>AI_FRIDAY Registration</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department" required>
+                </div>
+                <div class="form-group">
+                    <label for="school">School</label>
+                    <input type="text" id="school" name="school" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="about">About You</label>
+                    <textarea id="about" name="about" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image-upload">Upload Image</label>
+                    <input type="file" id="image-upload" accept="image/*" onchange="previewImage(event)">
+                    <img id="image-preview" src="id.png" alt="Image Preview" />
+                </div>
+                <button type="submit">Register</button>
+                <div id="loading" class="hidden">Loading...</div>
+                <div id="accuracy" class="hidden"></div>
+                <div id="error-message" class="hidden"></div>
+            </form>
+            <div id="welcome-message"></div>
+        </div>
+    </div>
+
+    <script src="register.js" defer></script>
+
+</body>
+
+</html>

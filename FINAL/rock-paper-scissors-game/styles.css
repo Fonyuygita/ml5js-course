@@ -1,0 +1,119 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    margin: 0;
+        background-image: url("./bg.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+.container {
+    text-align: center;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #5c67f5;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.game-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#video {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #3a47c9;
+}
+
+.vs {
+    font-size: 2rem;
+    margin: 0 20px;
+    color: #5c67f5;
+    animation: bounce 1s infinite;
+}
+
+#computerChoice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#computerImg {
+    width: 100px;
+    height: 100px;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.gesture {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.result {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #888;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    margin-bottom: 12px;
+}
+
+.result.visible {
+    opacity: 1;
+}
+
+.start-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #5c67f5;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.start-btn:hover {
+    background-color: #3a47c9;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}

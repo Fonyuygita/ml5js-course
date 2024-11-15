@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const gesture = document.getElementById("gesture");
   const video = document.getElementById("video");
   const gameResult = document.getElementById("gameResult");
+  const computerImg = document.getElementById("computerImg");
+  const modelUrl = "https://teachablemachine.withgoogle.com/models/LCFjaO7WV/model.json";
 
-  const modelUrl =
-    "https://teachablemachine.withgoogle.com/models/LCFjaO7WV/model.json";
   let userChoice = "";
   let classifier = ml5.imageClassifier(modelUrl, modelLoaded);
 
@@ -38,6 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let randomNumber = Math.floor(Math.random() * choices.length);
     let computerChoice = choices[randomNumber];
     let result = "";
+
+    // Set the computer's choice image
+    computerImg.src = `${computerChoice.toLowerCase()}.png`;
+    computerImg.style.display = "block";
+
     if (userChoice === computerChoice) {
       result = "It's a tie!";
     } else if (
@@ -49,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       result = "You lose!";
     }
+
     gameResult.innerText = `Computer chose: ${computerChoice}. ${result}`;
+    gameResult.classList.add("visible");
   }
 });
